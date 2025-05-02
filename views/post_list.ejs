@@ -1,15 +1,18 @@
 <html lang="en-gb">
-<%- include('_head') -%>
-<%- include('_header') -%>
-<body>
-<h1>Posts</h1>
-<ol>
-    <% postList.results.forEach(function(post) {%>
-        <li>
-            <%= post.message %> - <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %>
-        </li>
-    <% }); %>
-</ol>
-</body>
-<%- include('_footer') -%>
+  <%- include('_head') -%> <%- include('_header') -%>
+  <body>
+    <h1>Posts</h1>
+    <ol>
+      <% postList.results.forEach(function(post) {%>
+      <li><img alt="post image" src="<%" ="post.imageUrl" % /> ></li>
+      <li>Posted By: <%= postList.results[0].postedBy.username %></li>
+      <li>
+        <%= post.message %> - <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss")
+        %>
+      </li>
+
+      <% }); %>
+    </ol>
+  </body>
+  <%- include('_footer') -%>
 </html>

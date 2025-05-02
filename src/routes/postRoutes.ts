@@ -18,6 +18,7 @@ router.get("/", async (request, response) => {
     : 10;
 
   const postList = await getPageOfPosts(page, pageSize);
+  console.log(postList.results[0].postedBy)
   return response.render("post_list", {
     postList: postList,
     format: format,
