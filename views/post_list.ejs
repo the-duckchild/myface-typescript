@@ -1,25 +1,28 @@
 <html lang="en-gb">
-
 <%- include('_head') -%>
 <%- include('_header') -%>
 
 
 <body>
-<h1>Posts</h1>
+<h1>MyFace</h1>
 <p> <%= postList.results[0].likedBy.username %> </p>
 <ol>
     <% postList.results.forEach(function(post) {%>
         <li>
-            <%= post.message %> - <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %>
-            <br>
+            <img src=<%= post.postedBy.profileImageUrl %> class="profile-pic" alt = "profile image">
 
-           Username: <%= post.postedBy.username %>
-            <br>
+            <div>
+            Username: <%= post.postedBy.username %>
+            </div>
+           <div>
 
-            <img class="profile-pic" alt = "profile image" src = <%= post.postedBy.profileImageUrl %>>
+            <%= post.message %> 
             <br>
+            <br> 
+            <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %>
+           </div>
 
-            <img alt = "post image" src = <%= post.imageUrl %>>
+            <img alt = "post image" src = <%= post.imageUrl %> class="post-image">
             <br>
 
            <!-- Liked by: < %= post.likedBy[0].username %> -->
