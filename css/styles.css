@@ -1,0 +1,14 @@
+img {
+        width: 10px;
+
+}
+
+li {
+
+    display: flex;
+    flex-direction: row;
+    gap:  10px;
+}
+body {
+    background-color: red
+}
