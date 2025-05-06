@@ -31,12 +31,17 @@
         </li>
     <% }); %>
 </ol>
-<%if (postList.next) { %>
-    <a href="<%= postList.next %>">Next</a>
-<% } %>
 <%if (postList.previous) { %>
-    <a href="<%= postList.previous %>">Previous</a>
+    <button>
+    <a href="<%= postList.previous %> "class="header-btn">Previous</a>
+    ]</button>
 <% } %>
+<%if (postList.next) { %>
+    <button >
+    <a href="<%= postList.next %>" class="header-btn">Next</a>
+</button>
+<% } %>
+
 </body>
 <%- include('_footer') -%>
 </html>
