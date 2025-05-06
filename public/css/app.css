@@ -44,15 +44,15 @@ ol {
 }
 
 .profile-pic {
-    width : 7.5%;
     height: 7.5%;
+    width : 7.5%;
     border-radius: 5px;
     justify-self: flex-start;
 }
 
 .post-image {
-    height: 20%;
     width: 20%;
+    height: 20%;
     margin: 10px;
     border-radius: 5px;}
 
@@ -85,8 +85,21 @@ button {
 }
 
 @media (min-width: 768px) {
-  .button-54 {
+    .header-btn {
     padding: 0.25em 0.75em;
+  }
+  ol {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  body {
+    font-size: 1.5vw;
+  }
+  .profile-pic {
+    height: auto;
+  }
+  .post-image{
+    height:auto;
   }
 }
 
