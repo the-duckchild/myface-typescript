@@ -4,30 +4,22 @@
 
 
 <body>
-<h1>MyFace</h1>
 <p> <%= postList.results[0].likedBy.username %> </p>
 <ol>
     <% postList.results.forEach(function(post) {%>
         <li>
+            <img alt = "post image" src = <%= post.imageUrl %> class="post-image">
             <img src=<%= post.postedBy.profileImageUrl %> class="profile-pic" alt = "profile image">
-
-            <div>
-            Username: <%= post.postedBy.username %>
+            <div class="username">
+             <%= post.postedBy.username %>
+            </div>
+            <div class="date">
+                <%= format(post.createdAt, "dd-MM-yyyy") %>
             </div>
            <div>
-
             <%= post.message %> 
-            <br>
-            <br> 
-            <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %>
            </div>
-
-            <img alt = "post image" src = <%= post.imageUrl %> class="post-image">
-            <br>
-
            <!-- Liked by: < %= post.likedBy[0].username %> -->
-
-           <br>
         </li>
     <% }); %>
 </ol>
