@@ -2,7 +2,6 @@
 <%- include('_head') -%>
 <%- include('_header') -%>
 
-
 <body>
 <p> <%= postList.results[0].likedBy.username %> </p>
 <ol>
@@ -23,17 +22,18 @@
         </li>
     <% }); %>
 </ol>
+<div class="load-buttons-div">
 <%if (postList.previous) { %>
     <button>
-    <a href="<%= postList.previous %> "class="header-btn">Previous</a>
-    ]</button>
+    <a href="<%= postList.previous %> "class="Load-btn">Previous</a>
+    </button>
 <% } %>
 <%if (postList.next) { %>
     <button >
-    <a href="<%= postList.next %>" class="header-btn">Next</a>
+    <a href="<%= postList.next %>" class="Load-btn">Load More</a>
 </button>
 <% } %>
-
+</div>
 </body>
 <%- include('_footer') -%>
 </html>
