@@ -58,8 +58,9 @@ ol {
     padding-top: 5%;
 }
 
-#ourNav{
+#ourNav {
   display: flex;
+  z-index: 25;
 }
 
 
