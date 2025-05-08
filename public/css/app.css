@@ -1,12 +1,19 @@
 @import url("colours.css");
+
+
+
 nav {
+  
   background-color: var(--darker-background);
-  display: flex;
+  display: none;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  right: 0;
   margin:0;
   align-items: center;
   position: fixed;
   top: 0;
-  width: 100%;
   font-size: 20px;
   padding-bottom: 5px;
 }
@@ -50,6 +57,11 @@ ol {
     margin-right: 10%;
     padding-top: 5%;
 }
+
+#ourNav{
+  display: flex;
+}
+
 
 .flex-child {
     white-space: nowrap;
@@ -126,8 +138,30 @@ a:hover{
   margin-left: calc(10% + 24px);
 }
 
+.logos {
+  margin: auto;
+  width: 10%;
+}
+
+#colour-button{
+
+ margin-top: 10%;
+}
 
 @media (min-width: 768px) {
+
+  .menu-button{
+    display: none;
+  }
+
+  
+  nav {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+  }
+
     .header-btn {
       background-color: var(--darker-background);
   }

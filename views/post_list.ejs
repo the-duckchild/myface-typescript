@@ -3,10 +3,12 @@
 <%- include('_header') -%>
 
 <body>
-<p> <%= postList.results[0].likedBy.username %> </p>
+ 
+<button type="button" class="Load-btn menu-button" id="menu-button">Show Menu</button> 
+
 <ol>
     <% postList.results.forEach(function(post) {%>
-        <li>
+        <li class="postCard">
             <img alt = "post image" src = <%= post.imageUrl %> class="post-image">
             <img src=<%= post.postedBy.profileImageUrl %> class="profile-pic" alt = "profile image">
             <div class="username">
@@ -18,7 +20,7 @@
            <div>
             <%= post.message %> 
            </div>
-           <!-- Liked by: < %= post.likedBy[0].username %> -->
+
         </li>
     <% }); %>
 </ol>
@@ -33,6 +35,7 @@
     <a href="<%= postList.next %>" class="Load-btn">Load More</a>
 </button>
 <% } %>
+<button type="button" class="Load-btn" id="color-button">Go Colour Crazy</button>
 </div>
 </body>
 <%- include('_footer') -%>
