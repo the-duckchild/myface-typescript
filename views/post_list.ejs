@@ -4,7 +4,13 @@
 
 <body>
  
-<button type="button" class="Load-btn menu-button" id="menu-button">Show Menu</button> 
+<button type="button" class="menu-button" id="menu-button">
+    <div class = "container" onclick="animateBarButton(this)" >
+    <div class="bar1 hamburger"></div>
+    <div class="bar2 hamburger"></div>
+    <div class="bar3 hamburger"></div>
+    </div>
+</button> 
 
 <ol>
     <% postList.results.forEach(function(post) {%>

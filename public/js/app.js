@@ -28,7 +28,7 @@ menuButton.addEventListener("click", makeMenuVisible);
 function makeMenuVisible() {
 
 const menuShown = navBar[0].getAttribute("id")
- console.log(menuShown)
+
 
    if (menuShown ) {
     navBar[0].removeAttribute("id"); 
@@ -50,3 +50,25 @@ function clickAwayHideMenu (e) {
     navBar[0].removeAttribute("id"); 
   }
 }
+
+document.addEventListener("keydown", escEvent);
+
+function escEvent (e) {
+  navBar[0].removeAttribute("id");
+}
+
+// menuButton.addEventListener("click", animateBarButton);
+
+// function animateBarButton() {
+//   const burger = document.getElementsByClassName("hamburger")
+//   for(i=0; i < burger.length; i++) {
+//     burger[i].classList.add("change");
+//   }
+//   console.log(burger)
+
+// }
+
+function animateBarButton(x) {
+  x.classList.toggle("change");
+}
+
