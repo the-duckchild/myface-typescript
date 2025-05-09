@@ -72,3 +72,22 @@ function animateBarButton(x) {
   x.classList.toggle("change");
 }
 
+
+function validateForm() {
+  const checkName = document.forms["myForm"]["name"].value;
+  const checkUsername = document.forms["myForm"]["username"].value;
+  const checkEmail = document.forms["myForm"]["email"].value;
+  const checkProfileImg = document.forms["myForm"]["profileImageUrl"].value;
+  const checkCoverImg = document.forms["myForm"]["coverImageUrl"].value;
+    if (checkName !== "" && checkUsername !== "" && checkEmail !== "" && checkProfileImg !== "" && checkCoverImg !== "") {
+      alert("Name must be filled out");
+      submitButton.removeAttribute("disabled");
+  }
+
+}
+  
+const submitButton = getElementById("submit")
+
+submitButton.addEventListener("onmouseover", validateForm)
+
+

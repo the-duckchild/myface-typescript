@@ -3,7 +3,7 @@
 <%- include('_header') -%>
 <body>
 <h1>Create User</h1>
-<form method="post" action="/users/create">
+<form name= "myForm" method="post" action="/users/create" onsubmit="return validateForm()" >
     <label>
         Name:
         <input type="text" name="name"/>
@@ -24,7 +24,7 @@
         CoverImageUrl:
         <input type="text" name="coverImageUrl"/>
     </label>
-    <button type="submit">Submit</button>
+    <button type="submit" disabled id="submit">Submit</button>
 </form>
 </body>
 <%- include('_footer') -%>
