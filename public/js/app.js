@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const colorButton = document.getElementById("color-button")
 
-colorButton.addEventListener("click", randomColor);
+// colorButton.addEventListener("click", randomColor);
 
 
 function randomColor() {
@@ -23,7 +23,7 @@ const navBar = document.getElementsByClassName("navBar");
 
 console.log(navBar)
 
-menuButton.addEventListener("click", makeMenuVisible);
+// menuButton.addEventListener("click", makeMenuVisible);
 
 function makeMenuVisible() {
 
@@ -72,22 +72,48 @@ function animateBarButton(x) {
   x.classList.toggle("change");
 }
 
+const submitBTN = document.getElementById("submit")
+
+submitBTN.addEventListener("click", validateForm)
+
 
 function validateForm() {
   const checkName = document.forms["myForm"]["name"].value;
-  const checkUsername = document.forms["myForm"]["username"].value;
+  const checkUserName = document.forms["myForm"]["username"].value;
   const checkEmail = document.forms["myForm"]["email"].value;
   const checkProfileImg = document.forms["myForm"]["profileImageUrl"].value;
   const checkCoverImg = document.forms["myForm"]["coverImageUrl"].value;
-    if (checkName !== "" && checkUsername !== "" && checkEmail !== "" && checkProfileImg !== "" && checkCoverImg !== "") {
+  const testRegex = /^[a-z]+$/;
+
+    if (checkName == ""){
       alert("Name must be filled out");
-      submitButton.removeAttribute("disabled");
+      return false
+    }
+    else if (testRegex.test(checkUserName) == false) {
+      alert ("Username must be all lower case, no spaces.")
+      return false 
+    }
+    else if (checkUsername == "") {
+      alert("Username must be filled out");
+      return false
+    } 
+
+    else if (checkEmail == "") {
+      alert("Email must be filled out");
+      return false
+    } 
+    else if (checkProfileImg == ""){
+      alert("Profile Img Url must be filled out");
+      return false
+    }
+    else if (checkCoverImg == ""){
+      alert("Cover Img Url must be filled out");
+      return false
+    }
+
+  else if (checkImg == "") {
+    alert("Profile Img must be filled out");
+    return false
   }
-
+ 
 }
-  
-const submitButton = getElementById("submit")
-
-submitButton.addEventListener("onmouseover", validateForm)
-
-
